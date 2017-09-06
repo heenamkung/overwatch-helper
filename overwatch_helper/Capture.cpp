@@ -43,8 +43,62 @@ bool Capture::captureScreen(Screenshot& screenshot) {
 		cout << "error getting bitmap pixel data" << endl;
 	}
 	//image stored from bottom left of screen to top right
+	
+	/*
+	//storing image
+	BITMAP bmpScreen;
+	GetObject(hbm, sizeof(BITMAP), &bmpScreen);
+
+	BITMAPFILEHEADER   bmfHeader;
+	BITMAPINFOHEADER   bi;
+
+	bi.biSize = sizeof(BITMAPINFOHEADER);
+	bi.biWidth = bmpScreen.bmWidth;
+	bi.biHeight = bmpScreen.bmHeight;
+	bi.biPlanes = 1;
+	bi.biBitCount = 32;
+	bi.biCompression = BI_RGB;
+	bi.biSizeImage = 0;
+	bi.biXPelsPerMeter = 0;
+	bi.biYPelsPerMeter = 0;
+	bi.biClrUsed = 0;
+	bi.biClrImportant = 0;
+	DWORD dwBmpSize = ((bmpScreen.bmWidth * bi.biBitCount + 31) / 32) * 4 * bmpScreen.bmHeight;
+
+	HANDLE hDIB = GlobalAlloc(GHND, dwBmpSize);
+	
 
 
+	HANDLE hFile = CreateFile(L"captureqwsx.bmp",
+		GENERIC_WRITE,
+		0,
+		NULL,
+		CREATE_ALWAYS,
+		FILE_ATTRIBUTE_NORMAL, NULL);
+
+	// Add the size of the headers to the size of the bitmap to get the total file size
+	DWORD dwSizeofDIB = dwBmpSize + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
+
+	//Offset to where the actual bitmap bits start.
+	bmfHeader.bfOffBits = (DWORD)sizeof(BITMAPFILEHEADER) + (DWORD)sizeof(BITMAPINFOHEADER);
+
+	//Size of the file
+	bmfHeader.bfSize = dwSizeofDIB;
+
+	//bfType must always be BM for Bitmaps
+	bmfHeader.bfType = 0x4D42; //BM   
+
+	DWORD dwBytesWritten = 0;
+	WriteFile(hFile, (LPSTR)&bmfHeader, sizeof(BITMAPFILEHEADER), &dwBytesWritten, NULL);
+	WriteFile(hFile, (LPSTR)&bi, sizeof(BITMAPINFOHEADER), &dwBytesWritten, NULL);
+	WriteFile(hFile, (LPVOID)screenshot.Data, dwBmpSize, &dwBytesWritten, NULL);
+	GlobalUnlock(hDIB);
+	GlobalFree(hDIB);
+
+	//Close the handle for the file that was created
+	CloseHandle(hFile);
+
+	*/
 
 	screenshot.detectPixel(bmSize);
 

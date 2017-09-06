@@ -1,9 +1,5 @@
-﻿  Source.cpp
-  Screenshot.cpp
-c:\users\hee\documents\visual studio 2017\projects\overwatch_helper\overwatch_helper\screenshot.cpp(40): warning C4101: 'temp': unreferenced local variable
-  Capture.cpp
-  Generating Code...
-c:\users\hee\documents\visual studio 2017\projects\overwatch_helper\overwatch_helper\capture.cpp(56): warning C4715: 'Capture::captureScreen': not all control paths return a value
-c:\users\hee\documents\visual studio 2017\projects\overwatch_helper\overwatch_helper\screenshot.cpp(56): warning C4715: 'Screenshot::detectPixel': not all control paths return a value
-  overwatch_helper.vcxproj -> c:\users\hee\documents\visual studio 2017\Projects\overwatch_helper\Debug\overwatch_helper.exe
-  overwatch_helper.vcxproj -> c:\users\hee\documents\visual studio 2017\Projects\overwatch_helper\Debug\overwatch_helper.pdb (Partial PDB)
+﻿  Screenshot.cpp
+c:\users\hee\documents\visual studio 2017\projects\overwatch_helper\overwatch_helper\screenshot.cpp(58): warning C4101: 'temp': unreferenced local variable
+c:\users\hee\documents\visual studio 2017\projects\overwatch_helper\overwatch_helper\screenshot.cpp(75): warning C4715: 'Screenshot::detectPixel': not all control paths return a value
+  overwatch_helper.vcxproj -> C:\Users\Hee\documents\visual studio 2017\Projects\overwatch_helper\Debug\overwatch_helper.exe
+  overwatch_helper.vcxproj -> C:\Users\Hee\documents\visual studio 2017\Projects\overwatch_helper\Debug\overwatch_helper.pdb (Partial PDB)
